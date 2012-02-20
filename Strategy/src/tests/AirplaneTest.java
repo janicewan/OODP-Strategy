@@ -29,7 +29,7 @@ public class AirplaneTest {
 
 	@BeforeClass
 	public static void onlyOnce(){
-		FlyingFactory = new flyingFactory();
+		flyingFactory = new FlyingFactory();
 	}
 	
 	@Test
@@ -56,7 +56,7 @@ public class AirplaneTest {
 		String expectedOutput = "I don't Fly";
 		String stringReturned = null;
 		
-		Flying fly = new IDontFly();
+		Flying fly = flyingFactory.createFlying("Don't Fly");
 		LiftOff liftOff = new ILiftOffV();
 
 		Airplane classUnderTest = new Airplane(liftOff,fly);
@@ -73,7 +73,7 @@ public class AirplaneTest {
 		String expectedOutput = "Like a passenger airplane";
 		String stringReturned = null;
 		
-		Flying fly = new IFlyLikePP();
+		Flying fly = flyingFactory.createFlying("Passenger Airplane");
 		LiftOff liftOff = new ILiftOffV();
 
 		Airplane classUnderTest = new Airplane(liftOff,fly);
@@ -91,7 +91,7 @@ public class AirplaneTest {
 		String expectedOutput = "Vertically";
 		String stringReturned = null;
 
-		Flying fly = new IFlyLikeFJ();
+		Flying fly = flyingFactory.createFlying("Vertical");
 		LiftOff liftOff = new ILiftOffV();
 
 		Airplane classUnderTest = new Airplane(liftOff,fly);
@@ -108,7 +108,7 @@ public class AirplaneTest {
 		String expectedOutput = "I don't LiftOff";
 		String stringReturned = null;
 
-		Flying fly = new IFlyLikeFJ();
+		Flying fly = flyingFactory.createFlying("Don't Liftoff");
 		LiftOff liftOff = new IDontLiftOff();
 
 		Airplane classUnderTest = new Airplane(liftOff,fly);
@@ -124,8 +124,9 @@ public class AirplaneTest {
 				
 		String expectedOutput = "Horizontally";
 		String stringReturned = null;
-
-		Flying fly = new IFlyLikeFJ();
+		
+		Flying fly = flyingFactory.createFlying("Horizontal");
+		
 		LiftOff liftOff = new ILiftOffH();
 
 		Airplane classUnderTest = new Airplane(liftOff,fly);
