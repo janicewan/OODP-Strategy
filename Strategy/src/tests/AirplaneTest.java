@@ -10,14 +10,11 @@ import org.junit.Test;
 
 import vehicles.Airplane;
 import vehicles.FlyingFactory;
-import vehicles.IFlyLikeFJ;
 import vehicles.Flying;
 import vehicles.IDontLiftOff;
 import vehicles.ILiftOffH;
 import vehicles.LiftOff;
-import vehicles.IFlyLikePP;
 import vehicles.ILiftOffV;
-import vehicles.IDontFly;
 
 /**
  * @author oded
